@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { Vendedor } from "./views/vendedor";
+import { Vendedorytransportista } from "./views/vendedorytransportista";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -30,6 +32,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/vendedor/:theid">
+							<Vendedor />
+						</Route>
+						<Route exact path="/vendedorytransportista/:theid">
+							<Vendedorytransportista />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
