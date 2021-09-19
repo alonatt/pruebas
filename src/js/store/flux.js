@@ -12,17 +12,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			usuarios: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				const store = getStore();
+				fetch("https://jsonplaceholder.typicode.com/users")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ usuarios: result });
+						console.log(store.usuarios);
+					})
+					.catch(error => console.log("error", error));
 			},
 			changeColor: (index, color) => {
 				//get the store
