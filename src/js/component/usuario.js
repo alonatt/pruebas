@@ -13,14 +13,14 @@ export const Usuario = () => {
 	}, []);
 
 	return (
-		<div className="card">
+		<div className="card bg-light">
 			<div className="row">
 				<div className="col col-8">
 					<div className="card-body">
 						<span>Bienvenido {store.detalleusuarios.username}</span>
 					</div>
 				</div>
-				<div className="col col-4">
+				<div className="col col-3">
 					<img
 						src="https://static.vecteezy.com/system/resources/previews/002/387/693/non_2x/user-profile-icon-free-vector.jpg"
 						className="img-fluid rounded-start"
