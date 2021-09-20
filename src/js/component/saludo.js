@@ -10,14 +10,14 @@ export const Saludo = () => {
 			{store.usuarios.map((vendedor, posicion) => {
 				return (
 					<div key={posicion}>
-						<div className="alert alert-secondary" role="alert" key={posicion}>
-							<span> {vendedor.id} </span> <h2>Bienvenido {vendedor.name}</h2>
-						</div>
-
-						<div className="col col-6">
-							<Link to={"/vendedor/" + vendedor.id}>
-								<button className="btn btn-secondary"> Ir a perfil</button>
-							</Link>
+						<div className="row" key={posicion}>
+							<span>
+								{" "}
+								Bienvenido {vendedor.name}{" "}
+								<Link to={"/vendedor/" + vendedor.id}>
+									<button className="btn btn-secondary"> Ir a perfil</button>
+								</Link>{" "}
+							</span>
 						</div>
 					</div>
 				);

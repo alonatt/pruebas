@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Saludo } from "../component/saludo";
+import { TablaZonas } from "../component/zonas";
+import { Sidebar } from "../component/sidebar";
 
 export const Vendedor = () => {
 	const { store, actions } = useContext(Context);
@@ -13,9 +15,13 @@ export const Vendedor = () => {
 	return (
 		<>
 			<div className="container-fluid row">
-				<div className="col col-2" />
-				<div className="col col-10 text-center mt-5">
-					<h1>Bienvenido {store.detalleusuarios.name} </h1>
+				<div className="col col-2">
+					<Sidebar />
+				</div>
+				<div className="col col-10 mt-5">
+					<h5>Bienvenido {store.detalleusuarios.name} </h5>
+					<p>¿donde necesitas enviar tu producto hoy?</p>
+					<TablaZonas />
 					<Link to="/">
 						<button>Go back</button>
 					</Link>
