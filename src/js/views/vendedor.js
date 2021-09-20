@@ -1,23 +1,26 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
+import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 import { Saludo } from "../component/saludo";
 
-export const Vendedor = () => (
-	<div className="container-fluid row">
-		<div className="col col-2" />
-		<div className="col col-10 text-center mt-5">
-			<div clasName="row">
-				<h1>Bienvenido </h1>
-				<h2>
-					<Saludo />
-				</h2>
-
-				<p />
-				<a href="#" className="btn btn-success">
-					If you see this green button, bootstrap is working
-				</a>
+export const Vendedor = () => {
+	const { store, actions } = useContext(Context);
+	const { idvendedor } = useParams();
+	useEffect(() => {
+		actions.loadDetalleUsuario(idvendedor);
+	});
+	return (
+		<>
+			<div className="container-fluid row">
+				<div className="col col-2" />
+				<div className="col col-10 text-center mt-5">
+					<h1>Bienvenido {store.detalleusuarios.name} </h1>
+					<Link to="/">
+						<button>Go back</button>
+					</Link>
+				</div>
 			</div>
-		</div>
-	</div>
-);
+		</>
+	);
+};
