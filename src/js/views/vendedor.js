@@ -9,7 +9,7 @@ export const Vendedor = () => {
 	const { idvendedor } = useParams();
 	useEffect(() => {
 		actions.loadDetalleUsuario(idvendedor);
-	});
+	}, []);
 	return (
 		<>
 			<div className="container-fluid row">
