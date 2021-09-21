@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Table } from "reactstrap";
 
-export const TablaZonas = () => {
+export const Zonanorte = () => {
 	return (
 		<table className="table">
 			<thead>

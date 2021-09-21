@@ -12,6 +12,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Zonanorte } from "./component/zonanorte";
+import { Desplegable } from "./component/dropdown";
+import { Sidebar } from "./component/sidebar";
 
 //create your first component
 const Layout = () => {
@@ -24,6 +27,8 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
+					<Sidebar />
+					<Vendedor />
 					<Switch>
 						<Route exact path="/">
 							<Home />
@@ -37,7 +42,8 @@ const Layout = () => {
 						<Route exact path="/prueba/idpersona">
 							<Prueba />
 						</Route>
-						<Route exact path="/vendedor/:idvendedor">
+
+						<Route exact path="/vendedor/:idvendedor" component={Zonanorte}>
 							<Vendedor />
 						</Route>
 						<Route exact path="/vendedorytransportista/:theid">
@@ -47,6 +53,7 @@ const Layout = () => {
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
+
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
